@@ -38,6 +38,6 @@ app.put('/image', (req, res) => { image.handleImage(req, res, db) })
 
 app.post('/imageurl', (req, res) => { image.handleAPI(req, res) })
 
-app.listen(3000, () => {
-    console.log('App is working');
+app.listen(process.envPORT || 3000, () => {
+    console.log(`App is running on port ${process.env.PORT}`);
 });
